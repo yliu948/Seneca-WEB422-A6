@@ -3,6 +3,7 @@ import { searchHistoryAtom } from "../store";
 import { Col, Row, Form, Button } from "react-bootstrap";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
+import { addToHistory } from "@/lib/userData";
 
 export default function Search() {
   const router = useRouter();
@@ -14,7 +15,7 @@ export default function Search() {
     formState: { errors },
   } = useForm();
 
-  function submitForm(data) {
+  async function submitForm(data) {
     let queryString = data.searchBy + "=true";
 
     if (data.geoLocation) {
@@ -29,7 +30,7 @@ export default function Search() {
     queryString += "&isHighlight=" + data.isHighlight;
     queryString += "&q=" + data.q;
 
-    setSearchHistory((current) => [...current, queryString]);
+    setSearchHistory(await addToHistory(queryString));
     router.push("/artwork?" + queryString);
   }
 
