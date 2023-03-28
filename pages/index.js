@@ -5,7 +5,7 @@
  * (including web sites) or distributed to other students.
  *
  * Name: Yi Liu Student ID: 175187210 Date: 2023-03-27
- * Vercel App (Deployed) Link: _____________________________________________________
+ * Vercel App (Deployed) Link: https://seneca-metropolitan-museum.vercel.app/
  *
  ********************************************************************************/
 
